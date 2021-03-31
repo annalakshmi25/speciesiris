@@ -1,0 +1,38 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>iris</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    </head>
+
+    <body >
+    <div class="login-box">
+        <h1>DETERMING THE SPECIES OF IRIS</h1>
+        <h2>DecisionTreeClassifier</h2>
+
+        
+        <form action="calculate">
+            <div class="user-box">
+                <input type="text"  name="exp1" value="{{exp1}}" required="">
+                <label>Enter sepal length:</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="exp2" value="{{exp2}}" required="">
+                <label>Enter sepal width :</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="exp3" value="{{exp3}}" required="" >
+                <label>Enter Petal length:</label>
+            </div>
+            <div class="user-box">
+                 <input type="text" name="exp4" value="{{exp4}}" required="" >
+                 <label>Enter Petal length:</label>
+            </div>
+            <input type="submit" name="submit" value="predict" class="submitbtn" />
+        </form><br>
+        <h2>Species : {{predicted}}</h2>
+    </div>
+
+</body>
+</html>
