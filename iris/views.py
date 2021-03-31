@@ -13,7 +13,7 @@ def predict(request):
     exp2 = float(request.GET['exp2'])
     exp3 = float(request.GET['exp3'])
     exp4 = float(request.GET['exp4'])
-    rawdata = staticfiles_storage.path('iris.csv')
+    rawdata = staticfiles_storage.path('Iris.csv')
     dataset = pd.read_csv(rawdata)
     X = dataset.iloc[:,1:5].values
     y = dataset.iloc[:,5].values
@@ -27,3 +27,5 @@ def predict(request):
     accuracy = accuracy*100
     accuracy = int(accuracy)
     return render(request,'index.html',{"predicted":y_pred[0],"exp1":exp1,"exp2":exp2,"exp3":exp3,"exp4":exp4})
+
+  
